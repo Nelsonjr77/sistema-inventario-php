@@ -12,7 +12,13 @@ define('DB_PASS', ''); // Contraseña por defecto de XAMPP está vacía
 define('DB_CHARSET', 'utf8mb4');
 
 // Configuración de la aplicación
-define('BASE_URL', 'http://localhost/sistema-inventario');
+// Detectar la URL base automáticamente
+$protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
+$host = $_SERVER['HTTP_HOST'];
+$scriptPath = dirname(dirname($_SERVER['SCRIPT_NAME']));
+$baseUrl = $protocol . '://' . $host . $scriptPath;
+
+define('BASE_URL', $baseUrl);
 define('UPLOAD_DIR', __DIR__ . '/../uploads/');
 define('UPLOAD_URL', BASE_URL . '/uploads/');
 

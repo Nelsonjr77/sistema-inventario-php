@@ -1,4 +1,6 @@
-const BASE_URL = window.location.origin + '/sistema-inventario';
+// Detectar BASE_URL automáticamente
+const pathArray = window.location.pathname.split('/');
+const BASE_URL = window.location.origin + '/' + pathArray[1];
 const API_URL = BASE_URL + '/modules/facturacion/api.php';
 
 // Agregar primera fila de producto automáticamente
