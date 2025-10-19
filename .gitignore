@@ -1,0 +1,25 @@
+# Ignorar imágenes de productos (mantener solo README.txt y .htaccess)
+uploads/*
+!uploads/.htaccess
+!uploads/README.txt
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos de editor
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Logs
+*.log
+error_log
+
+# Archivos temporales
+tmp/
+temp/
+cache/
